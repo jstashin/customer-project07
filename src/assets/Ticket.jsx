@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { Calendar } from "lucide-react";
-const Ticket = ({ticket}) => {
+const Ticket = ({ticket,handleTask}) => {
     const { id, title, description, customer, priority, status, createdAt } = ticket;
 const priorityColors = {
     "High": "text-red-600 font-bold",
@@ -13,8 +13,9 @@ const statusStyles = {
     "Closed": "bg-gray-200 text-gray-700",
   };
 
+ 
   return (
-    < div className="bg-base-100  rounded-lg p-4 shadow-sm w-[380px]">
+    < div onClick={()=>handleTask(ticket)}className="bg-base-100  rounded-lg p-4 shadow-sm w-[380px]">
  
       <div className="flex justify-between items-center mb-2">
         <h3 className="font-semibold text-gray-800">{title}</h3>

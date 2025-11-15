@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Banner = ({ inProgress = 0, resolved = 0 }) => {
+const Banner = ({ inProgress, resolved = 0 }) => {
   return (
     <div className="flex flex-col md:flex-row gap-10 w-full justify-center items-center mt-5 mb-5">
      <div
