@@ -18,7 +18,7 @@ function App() {
         <Tickets promise={ticketPromise} />
       </Suspense>
       <Footer/>
-      <ToastContainer position="bottom-right"
+      <ToastContainer position="top-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

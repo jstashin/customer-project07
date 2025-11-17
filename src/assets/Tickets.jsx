@@ -4,8 +4,9 @@ import Banner from './Banner';
 import { toast } from 'react-toastify';
 
 const Tickets = ({ promise }) => {
-  const tickets = use(promise);
+  const data = use(promise);
 
+  const [tickets, setTickets] = useState(data);
   const [cards, setCards] = useState([]);
   const [resolved, setResolved] = useState([]);
 
@@ -21,13 +22,19 @@ const Tickets = ({ promise }) => {
   };
 
   const handleComplete = (ticket) => {
-    toast.success("The task is complete");
+  toast.success("The task is complete");
 
-    const remaining = cards.filter((item) => item.id !== ticket.id);
-    setCards(remaining);
+  const remaining = cards.filter((item) => item.id !== ticket.id);
+  setCards(remaining);
 
-    setResolved([...resolved, ticket]);
-  };
+  
+  setResolved([...resolved, ticket]);
+
+  
+  const updatedTickets = tickets.filter((item) => item.id !== ticket.id);
+  setTickets(updatedTickets);
+};
+
 
   return (
     <>
@@ -80,7 +87,7 @@ const Tickets = ({ promise }) => {
 
           
           <div>
-            <h1 className="font-bold text-lg md:text-xl mb-3">Resolved Task</h1>
+            <h1 className="font-bold  md:text-xl mb-3">Resolved Task</h1>
 
             {resolved.length === 0 ? (
               <p className="text-gray-500 text-sm md:text-base  p-4 rounded">

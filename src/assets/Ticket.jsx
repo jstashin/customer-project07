@@ -10,7 +10,7 @@ const priorityColors = {
 const statusStyles = {
     "Open": "bg-green-100 text-green-700",
     "In-Progress": "bg-yellow-100 text-yellow-700",
-    "Closed": "bg-gray-200 text-gray-700",
+    
   };
 
  
